@@ -15,7 +15,6 @@ Url:		https://www.libimobiledevice.org/
 Source0:	https://github.com/libimobiledevice/libtatsu/releases/download/%{version}/%{name}-%{version}.tar.gz
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool-base
 BuildRequires:	slibtool
 BuildRequires:	make
 BuildRequires:	pkgconfig(libplist-2.0)
@@ -36,8 +35,8 @@ Library handling the communication with Apple's Tatsu Signing Server (TSS).
 %package  -n 	%{devname}
 Summary:	Development package for libtatsu
 Group:		Development/C
-Requires:	%{name} = %{version}-%{release}
-Provides:	%{name}-devel = %{version}-%{release}
+Requires:	%{libname} = %{EVRD}
+Provides:	%{name}-devel = %{EVRD}
 
 %description -n	 %{devname}
 Development files (Headers etc.) for %{name}.
