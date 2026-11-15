@@ -65,6 +65,6 @@ echo %{version} > .tarball-version
 %files -n  %{devname}
 %{_includedir}/*
 %{_libdir}/pkgconfig/%{name}-%{api}.pc
-%{_libdir}/%{name}.so
+%{_libdir}/%{name}-%{api}.so
 
 
