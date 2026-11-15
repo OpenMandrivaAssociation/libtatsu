@@ -29,7 +29,7 @@ Library handling the communication with Apple's Tatsu Signing Server (TSS).
 Group:		System/Libraries
 Summary:	Library for manipulating Apple Binary and XML Property Lists
 Provides:	%{name} >= %{version}-%{release}
-Obsoletes:	%{name} < %{EVRD}
+# Obsoletes:	%{name} < %{EVRD}
 
 %description	-n %{libname}
 Library handling the communication with Apple's Tatsu Signing Server (TSS).
