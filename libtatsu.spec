@@ -1,7 +1,7 @@
 %define major 0
 %define api 1.0
 
-%define libname %mklibname tatsu %{api}
+%define libname %mklibname tatsu 
 %define devname %mklibname -d tatsu
 
 
