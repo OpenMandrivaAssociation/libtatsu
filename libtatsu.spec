@@ -13,12 +13,13 @@ Group:		System/Libraries
 License:	LGPLv2.1
 Url:		https://www.libimobiledevice.org/
 Source0:	https://github.com/libimobiledevice/libtatsu/releases/download/%{version}/%{name}-%{version}.tar.gz
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	slibtool
-BuildRequires:	make
 BuildRequires:	pkgconfig(libplist-2.0)
 BuildRequires:	pkgconfig(libcurl)
+BuildRequires:	slibtool
+BuildRequires:	automake
+BuildRequires:	autoconf
+BuildSystem:	autotools
+BuildOption:	--disable-static
 
 %description
 Library handling the communication with Apple's Tatsu Signing Server (TSS).
@@ -41,16 +42,10 @@ Provides:	%{name}-devel = %{EVRD}
 %description -n	 %{devname}
 Development files (Headers etc.) for %{name}.
 
-%prep
-%autosetup -p1
+%prep -a
 echo %{version} > .tarball-version
-./autogen.sh --prefix=/usr --libdir=/usr/lib64 --disable-static
-
-%build
-%make_build
-
-%install
-%make_install
+sed -i -e 's,libtool,slibtool,g' autogen.sh
+NOCONFIGURE=1 ./autogen.sh
 
 #%files
 #%%doc AUTHORS COPYING.LESSER
