@@ -19,6 +19,7 @@ BuildRequires:	libtool-base
 BuildRequires:	slibtool
 BuildRequires:	make
 BuildRequires:	pkgconfig(libplist-2.0)
+BuildRequires:	pkgconfig(libcurl)
 
 %description
 Library handling the communication with Apple's Tatsu Signing Server (TSS).
