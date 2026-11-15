@@ -28,7 +28,7 @@ Library handling the communication with Apple's Tatsu Signing Server (TSS).
 %package -n	%{libname}
 Group:		System/Libraries
 Summary:	Library for manipulating Apple Binary and XML Property Lists
-Suggests:	%{name} >= %{version}-%{release}
+Provides:	%{name} >= %{version}-%{release}
 Obsoletes:	%{name} < %{EVRD}
 
 %description	-n %{libname}
@@ -60,7 +60,7 @@ echo %{version} > .tarball-version
 
 %files -n  %{libname}
 %{_libdir}/%{name}.so.%{major}{,.*}
- 
+
 
 %files -n  %{devname}
 %{_includedir}/*
